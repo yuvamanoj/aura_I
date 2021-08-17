@@ -1,0 +1,14 @@
+config
+cypress
+cypress.json
+pages
+styles
+src/actions
+src/components
+src/configureStore.js
+src/globals
+src/reducers
+src/sagas
+src/services
+src/utils
+node_modules

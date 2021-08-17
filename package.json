@@ -1,0 +1,45 @@
+{
+  "name": "aura-credentials-manager",
+  "version": "1.0.2",
+  "private": true,
+  "scripts": {
+    "start": "node app",
+    "installation": "npm ci && cd client && npm ci",
+    "build-client": "cd client && npm run build",
+    "dev": "nodemon app",
+    "serverstart": "DEBUG=aura-credentials-manager:* npm run dev",
+    "audit": "npm audit --registry=https://registry.npmjs.org",
+    "lint": "./node_modules/.bin/eslint .",
+    "test:jenkins": "nyc mocha --timeout 100000 --reporter mocha-sonar-generic-test-coverage tests/*.js --exit",
+    "test": "nyc --reporter=lcov mocha --timeout 100000 --reporter mocha-junit-reporter tests/*.js --exit",
+    "build:docker": "docker build -t mss-nodejs-ms .",
+    "start:docker": "docker run --env PORT=3000 -p 3000:3000 mss-nodejs-ms:latest"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "btoa": "^1.2.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "~1.4.4",
+    "crypto-js": "^4.0.0",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "dotenv-defaults": "^2.0.2",
+    "express": "~4.16.1",
+    "express-prom-bundle": "^6.1.0",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "log4js": "^6.3.0",
+    "prom-client": "^12.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^7.3.1",
+    "eslint-plugin-jasmine": "^4.1.1",
+    "mocha": "^8.0.1",
+    "mocha-junit-reporter": "^2.0.0",
+    "nodemon": "^2.0.12",
+    "nyc": "^15.1.0",
+    "sinon": "^11.1.0"
+  }
+}

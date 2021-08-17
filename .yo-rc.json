@@ -1,0 +1,10 @@
+{
+  "@mss/generator-devsecops": {
+    "lastRunVersion": "2.1.25",
+    "scaffoldGeneratorCategory": "core",
+    "scaffoldGeneratorName": "nodejs-microservice",
+    "scaffoldGeneratorAnswers": {
+      "name": "aura-credentials-manager"
+    }
+  }
+}
